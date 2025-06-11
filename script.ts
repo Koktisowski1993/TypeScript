@@ -370,33 +370,115 @@
 // console.log(bankAccount1.retirementSavings);
 
 // Komplexni uloha
-type User = {
-    name: string;
-    yearOfBirth: number;
-    email?: string;
-}
+// type User = {
+//     name: string;
+//     yearOfBirth: number;
+//     email?: string;
+// }
 
 // Data z formulare
-const user1: User = {
-    name: 'John',
-    yearOfBirth: 1990,
-    email: 'john@example.com'
-}
+// const user1: User = {
+//     name: 'John',
+//     yearOfBirth: 1990,
+//     email: 'john@example.com'
+// }
 
-const user2: User = {
-    name: 'Jane',
-    yearOfBirth: 1995,
-}
-
-const calculateAge = (myUser: User): number => {
-    const currentYear = new Date().getFullYear();
-    return currentYear - myUser.yearOfBirth;
-}
-
+// const user2: User = {
+//     name: 'Jane',
+//     yearOfBirth: 1995,
+// }
+//
+// const calculateAge = (myUser: User): number => {
+//     const currentYear = new Date().getFullYear();
+//     return currentYear - myUser.yearOfBirth;
+// }
+//
 // Funkce pro zobrazení informací o uživateli
-const displayUserInfo = (myUser: User): string => {
-    const userAge = calculateAge(myUser);
-    return `Uživatel ${myUser.name}, Věk: ${myUser.yearOfBirth}, Email: ${myUser.email || 'není k dispozici'}`;
-}
+// const displayUserInfo = (myUser: User): string => {
+//     const userAge = calculateAge(myUser);
+//     return `Uživatel ${myUser.name}, Věk: ${myUser.yearOfBirth}, Email: ${myUser.email || 'není k dispozici'}`;
+// }
+//
+// console.log(displayUserInfo(user2));
 
-console.log(displayUserInfo(user2));
+//Pole
+
+// const students:string[] = ['David', 'Harry', 'Karel', 'Alois', 'Petr'];
+// students.push('Ron');
+// console.log(students);
+
+// let testResults:number [] = [80, 90, 75, 85, 95];
+// testResults.push(5);
+// console.log(testResults);
+
+// let boolArray: boolean[] = [true, false, true, true, false];
+// console.log(boolArray);
+
+// Pole - alternativni zapisy
+
+// const strings: string[] = ['Harry', 'Ron', 'Uwe'];
+// const strings:Array<string> = ['Harry', 'Ron', 'Uwe'];
+
+// const numbers: number[]= [80, 90, 75, 85, 95];
+// const numbers: Array<number> = [80, 90, 75, 85, 95];
+
+// const booleans:boolean[] = [true, false, true, true, false];
+// const booleans: Array<boolean> = [true, false, true, true, false];
+
+// Pole objektu
+// type TestResults = {
+//     firstPart: number;
+//     secondPart: number;
+// }
+
+// const allResults: TestResults[] = [
+//     { firstPart: 80, secondPart: 90 },
+//     { firstPart: 75, secondPart: 85 },
+//     { firstPart: 95, secondPart: 100 }
+// ];
+
+// console.log(allResults[0].firstPart);
+
+// Multidimenzionalni pole
+
+// const table:string [][] = [
+//     ['Jméno', 'Věk', 'Město'],
+//     ['David', '30', 'Praha'],
+//     ['Karel', '25', 'Brno'],
+//     ['Petr', '28', 'Ostrava']
+// ]
+
+// console.log(table[0][0]);
+
+// const table2:number [][][] = [
+//     [
+//         [2, 3, 4],
+//         [4, 4, 1],
+//     ],
+//     [
+//         [5, 6, 7],
+//         [8, 9, 10],
+//     ]
+// ]
+
+// Union types
+// const getValue = (num:number): number | string => {
+//     if (num % 2 == 0) {
+//         return num * 2
+//     } else {
+//         return `Cislo ${num} je liche.`;
+//     }
+// }
+//
+// console.log(getValue(1));
+// console.log(getValue(7));
+
+// let students:string|string[];
+// students = 'David';
+// console.log(students);
+//
+// students = ['David', 'Harry', 'Karel'];
+// console.log(students);
+
+type
+
