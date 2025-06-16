@@ -55,3 +55,5 @@
 // } else {
 //     console.error(`Neznamy typ prvku`)
 // }
+var firstName;
+console.log(firstName);

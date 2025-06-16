@@ -3,12 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
+    <header>
+        <section>
+            <h1>Vloz informace o uzivateli</h1>
+
+            <form id="userForm" class="userForm">
+                <div class="input">
+                    <label for="name">Jméno:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="input">
+                    <label for="yearOfBirth">Rok narozeni:</label>
+                    <input type="number" id="yearOfBirth" required>
+                </div>
+                <div class="input">
+                    <label for="email">Email (volitelne):</label>
+                    <input type="number" id="email" required>
+                </div>
+                <button>Odeslat</button>
+            </form>
+
+            <h2>Indormace o uzivateli</h2>
+            <div id="userInfo"></div>
+        </section>
     <section id="output"></section>
     <script src="script.js"></script>
-    <img src="#" alt="" id="myImage">
-    <input type="text" id="myInput">
 </body>
 </html>

@@ -1,3 +1,4 @@
+
 // Datove typy sting, number a boolean
 // let student: string= 'David';
 // student = 'Harry';
@@ -506,7 +507,7 @@
 //         throw new Error('Invalid price format: missing "$"');
 //     }
 //     return price;
-};
+// };
 //
 // console.log(clearNumber(100));
 // console.log(clearNumber('$100'))
@@ -571,5 +572,210 @@
 //     console.error(`Neznamy typ prvku`)
 // }
 
+// definite assignment assertion
 
+// let firstName: string;
+//
+// console.log(firstName);
+//
+// const initialize = () => {
+//     firstName = "John";
+// }
+// initialize();
+//
+// console.log(firstName);
 
+// Non-null assertion
+
+// const inputElement = document.getElementById("userNameInput") as HTMLInputElement;
+//
+// inputElement!.value = 'John Doe';
+
+// type User = {
+//     name: string;
+//     email?: string;
+// }
+//
+// const myUser: User = {
+//     name: 'John',
+//     email: 'john.doe@nothing.com'
+// }
+//
+// console.log(myUser.email!.length);
+
+// --------------------------------------------------------------------------------------------------------------------
+// Komplexni uloha
+// type User = {
+//     name: string;
+//     yearOfBirth: number;
+//     email?: string;
+// }
+
+// const calculateAge = (myUser: User): number => {
+//     const currentYear = new Date().getFullYear();
+//     return currentYear - myUser.yearOfBirth;
+// }
+
+// Funkce pro zobrazení informací o uživateli
+// const displayUserInfo = (myUser: User): string => {
+//     const userAge = calculateAge(myUser);
+//     return `Uživatel ${myUser.name}, Věk: ${myUser.yearOfBirth}, Email: ${myUser.email || 'není k dispozici'}`;
+// }
+//
+//  Funkce pro zpracovani formulare
+
+// document.getElementById('userForm')!.addEventListener('submit', e => {
+//     e.preventDefault(); // Zabrani vychozo chovani formulare = znovunacteni
+
+// Ziskani hodnot z formulare
+//     const name = (document.getElementsById('name') as HTMLInputElement).value;
+//     const yearOfBirth = parseInt((document.getElementById('yearOfBirth') as HTMLInputElement).value);
+//     const email = (document.getElementById('email') as HTMLInputElement).value | null;
+// });
+
+// vytvoreni objektu uzivatele
+
+// const user: User = {
+//     name,
+//     yearOfBirth,
+//     email,
+// }
+// zobrazeni informaci o uzivateli
+// const createUserInfoParagraph = ():HTMLParagraphElement => {
+//     const p = document.createElement('p');
+//     p.textContent = displayUserInfo(user);
+//     return p;
+// }
+
+// const userInfo = document.getElementById('userForm') as HTMLDivElement | null;
+// userInfo?.append(createUserInfoParagraph());
+//
+// Vycisteni formulare
+// (document.getElementById('userForm') as HTMLFormElement).reset();
+// --------------------------------------------------------------------------------------------------------------------
+
+// Tuple - kdyz nadefinuju typy v poli, cekaji se 3 polozky s danymi typy
+// const person: [string, number, boolean] = ['Alice', 30, true];
+
+// const book: [string, string, number] = ['Hobbit', 'J.R.R. Tolkien', 1937];
+//
+// Destructuring tuple
+// const [title, author, publishedYear] = book;
+//
+// console.log(title);
+// console.log(author);
+// console.log(publishedYear);
+
+// let car: [string, string, number, boolean];
+// car = ['Tesla', 'Model 3', 2020, true];
+
+// const [brand, model, year, isElectric] = car;
+
+// console.log(`Znacka ${brand}`);
+// console.log(`Model ${model}`);
+// console.log(`Rok vyroby: ${year}`);
+// console.log(`Je elektricky: ${isElectric ? 'Ano' : 'Ne'}`);
+
+// Tuple a type alias
+// type HTTPresponse = [number, string];
+//
+// const response1: HTTPresponse = [200, 'OK'];
+// const response2: HTTPresponse = [404, 'Stranka nenalezena'];
+// const response3: HTTPresponse = [500, 'Server error'];
+
+// Tuple a jeho problemy
+// type userInfo = [string, number, boolean];
+//
+// const user1: userInfo = ['Alice', 30, true];
+// const user2: userInfo = ['Bob', 25, false];
+// const user3: userInfo = ['Milos', 40, true];
+
+// user1.push('text'); // Toto je povoleno, ale neni to spravne
+
+// Vypis do konzole
+// console.log(user1);
+// console.log(user2);
+// console.log(user3);
+
+//ENUM
+// const barvy = ['cervena, zelena, modra'] as const;
+// let mojeBarva = barvy[0];
+// console.log(mojeBarva);
+
+// enum Barva {
+//     Cervena,
+//     Zelena,
+//     Modra
+// }
+
+// let mojeBarva2: Barva = Barva.Cervena;
+// console.log(mojeBarva2);
+
+// enum trafficLights {
+//     RED = 'red',
+//     YELLOW = 'yellow',
+//     GREEN = 'green'
+// }
+
+// console.log(trafficLights.RED);
+
+// enum Days {
+//     MONDAY = 'Monday',
+//     TUESDAY = 'Tuesday',
+//     WEDNESDAY = 'Wednesday',
+//     THURSDAY = 'Thursday',
+//     FRIDAY = 'Friday',
+//     SATURDAY = 'Saturday',
+//     SUNDAY = 'Sunday'
+// }
+
+// const isWeekend = (day: Days): boolean => {
+//     return day === Days.SATURDAY || day === Days.SUNDAY;
+// }
+
+// console.log(isWeekend (Days.MONDAY))
+
+// enum UserRole {
+//     ADMIN = 'admin',
+//     USER = 'user',
+//     GUEST = 'guest',
+// }
+
+// const getPermissions = (role: UserRole): string => {
+//     switch (role) {
+//         case UserRole.ADMIN:
+//             return 'Plný přístup ke všem funkcím.';
+//         case UserRole.USER:
+//             return 'Omezený přístup k některým funkcím.';
+//         case UserRole.GUEST:
+//             return 'Pouze prohlížení obsahu.';
+//         default:
+//             return 'Neznámá role.';
+//     }
+// }
+//
+//  NOOOICE// enum OrderState {
+//     WAITING = 'ceka',
+//     SEND = 'odeslana',
+//     DELIVERED = 'dorucena',
+//     CANCELED = 'zrusena'
+// }
+
+// const stateIntro = 'Objednavka je ve stavu:';
+
+// const getOrderStatus = (state: OrderState): string => {
+//     switch (state) {
+//         case OrderState.WAITING:
+//             return `${stateInfo} ${OrderState.WAITING}`;
+//         case OrderState.SEND:
+//             return `${stateInfo} ${OrderState.SEND}`
+//         case OrderState.DELIVERED:
+//             return `${stateInfo} ${OrderState.DELIVERED}`
+//         case OrderState.CANCELED:
+//             return `${stateInfo} ${OrderState.CANCELED}`
+//         default:
+//             return 'Neznámý stav objednávky.';
+//     }
+// }
+//
+// consol.log(getOrderStatus(OrderState.WAITING));
